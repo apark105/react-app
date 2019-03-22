@@ -15,10 +15,17 @@ module.exports = {
             loader: "babel-loader"
           }        
         },
+        {
+          test: /\.css$/,
+          use: ["style-loader", "css-loader"]
+        },
       ]
     },
-    // resolve: {
-    //   extensions: ['*', '.js', '.jsx']
-    // },
-    plugins: [htmlPlugin]
+    resolve: {
+      extensions: ['*', '.js', '.jsx']
+    },
+    plugins: [htmlPlugin],
+    devServer: {
+      port: 3000
+    },
   };
